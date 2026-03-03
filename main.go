@@ -7,5 +7,8 @@ import (
 )
 
 func main() {
-	cmd.Run("https://example.com", 3*time.Second, 2*time.Second)
+	cmd.Run([]string{
+		"https://example.com",
+		"https://google.com",
+	}, 3*time.Second, 2*time.Second)
 }

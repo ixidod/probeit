@@ -41,6 +41,7 @@ func (h *HTTPProber) Probe(ctx context.Context) Result {
 			Err:     fmt.Errorf("making request: %w", err),
 		}
 	}
+	defer res.Body.Close()
 
 	return Result{
 		StatusCode: res.StatusCode,
